@@ -63,8 +63,6 @@ void Node::convertFix(){
     this->fix="postfix";
     this->equation=preToPost(this->equation);
   }
-  //string eq = this->equation;
-
 
 void linkedList::remove(string condition){
   if(head==nullptr){
@@ -98,7 +96,6 @@ void linkedList::remove(string condition){
     Next->prev=trav;
     size--;
     return;
-    //0 1 2 3 4 
   }
     Node* trav=head;
     while(trav!=nullptr){
@@ -110,7 +107,6 @@ void linkedList::remove(string condition){
           }else if(trav==tail){
             Node* Prev = tail->prev;
             Prev->next=nullptr;
-            //cout<<"PREV"<<Prev->fix<<Prev->equation;
             //delete trav;
             tail=Prev;
             if(tail==head){
