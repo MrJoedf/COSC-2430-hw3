@@ -6,7 +6,6 @@
 #include <sstream>
 using namespace std;
 
-
 struct Node{
   Node* prev=nullptr; Node* next=nullptr;
   string fix, equation;
@@ -47,9 +46,8 @@ class linkedList{
     void convertPos(int val);
 
     void convert(string condition);
+  
     string print();
-
-    //void pushReserve(Stack& stack, string condition);
 
     string reversePrint();
 
@@ -62,8 +60,6 @@ class linkedList{
       head=temp;
       size++;
     }
-  
-
 };
 
 #endif
