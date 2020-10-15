@@ -5,18 +5,12 @@
 #include "linkedList.h"
 using namespace std;
 
-
-
 class Stack{
   public:
-    //Node* top=nullptr;
     int size=0;
     
     linkedList top;
-
-    //stack.head;
   
-
     void add(string fix, string equation);
      
     string print();
@@ -28,7 +22,6 @@ class Stack{
     string getTop();
 
     void popReserve(linkedList& list, int pos);
-    
 
     void convertReserve();
 
