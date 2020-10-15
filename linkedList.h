@@ -1,9 +1,7 @@
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 #include <iostream>
-#include <fstream>
 #include <string>
-#include <sstream>
 using namespace std;
 
 struct Node{
