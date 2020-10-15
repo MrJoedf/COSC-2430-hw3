@@ -123,7 +123,7 @@ void linkedList::remove(string condition){
             trav=Prev;
           }
       } trav=trav->next;
-      }
+    }
   }
 string linkedList::print(){
  
