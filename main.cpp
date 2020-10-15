@@ -40,10 +40,7 @@ int main(int argc, char *argv[]) {
 
   string inputFileName=am.get("input"),outputFileName=am.get("output"), commandFileName=am.get("command");
 
-  ifstream inputFile, commandFile; ofstream outputFile;
-  inputFile.open(inputFileName); 
-  commandFile.open(commandFileName); 
-  outputFile.open(outputFileName);
+  ifstream inputFile(inputFileName), commandFile(commandFileName); ofstream outputFile(outputFileName);
 
   string input; //string for expressions
   linkedList List; Stack stack;
@@ -121,13 +118,13 @@ int main(int argc, char *argv[]) {
         stack.pushReserve(List, condition);
 
     }
-
+       
     else if (command.find("emptyReserve")!=string::npos){
       cout<<"EMPTY RESERVE"<<endl;
       string condition = trimCommand(command, "emptyReserve");
       stack.empty(List, stoi(condition));
     }
-
+       
     else if (command.find("popReserve")!=string::npos){
       cout<<"POP RESERVE"<<endl;
       string condition = trimCommand(command, "popReserve");
@@ -139,148 +136,10 @@ int main(int argc, char *argv[]) {
         string condition = trimCommand(command, "removeList");
         List.remove(condition);
     }
-
   }
   cout<<"AFTER COMMAND"<<endl;
-
-  //}
-  
-  //Test case 3
-
- /* cout<<List.print();
-  stack.pushReserve(List, "all");
-  cout<<List.print();
-  stack.empty(List, 999);
-  cout<<List.print();
-
-  //Test case 2
-  //linkedList List; Stack stack;
-  */
-  /*cout<<List.print();
-
-  stack.pushReserve(List, "postfix");
-
-  cout<<List.print();
-  
-  cout<<stack.printSize();
-  cout<<stack.getTop();
-  stack.convertReserve();
-  stack.reverse();
-  stack.popReserve(List, 0);
-  cout<<List.print();
-  
-  stack.empty(List, 0);
-   cout<<List.print();
-   //END TEST CASE 2
-
-
-  //List.remove("postfix");
-  //List.remove("prefix");
-  
-  //Test case 1*/
-
-  /*cout<<List.print();
-
-  cout<<List.reversePrint();
-  List.convert("postfix");
-  cout<<List.print();
-  List.convert("prefix");
-  cout<<List.print();
-  List.convert("all");
-  cout<<List.print();
-  List.convert("0");
-  cout<<List.print();*/
-
-  //end test case 1
-  
-  /*stack.add("postfix","AB+CD-*");
-  cout<<stack.getTop();
-  stack.top.head->convertFix();
-  cout<<stack.getTop();
-  cout<<stack.printSize();*/
-
-  //linkedList list;
-  //Stack stack;
-
-  /*stack.add("postfix", "5");
-  stack.add("prefix", "4");
-  stack.add("prefix","3");
-  stack.add("postfix","2");
-  stack.add("postfix","1");
-
-  cout<<stack.print();
-  stack.reverse();
-  cout<<stack.print();
-  cout<<stack.size;*/
-
- /* list.add("postfix", "AB+CD-");
-  list.add("prefix", "+*ABC");
-  list.add("prefix", "+A*B/C-EF");
-  list.add("postfix", "AB-C-D/");
-  cout<<list.print();
-  list.insertBeg("prefix", "TEST");
-  cout<<list.print();
-  list.insertBeg("postfix", "TEST1");
-  cout<<list.print();
-  
-  //Node* trav= list.head;
-
-  /*list.remove("prefix");
-  //list.remove("postfix");
-  cout<<list.print();
-  stack.pushReserve(list, "postfix");
-  list.add("postfix", "DARKNESS");
-  list.convert("all");
-  list.remove("postfix");
-  cout<<list.print();
-  stack.convertReserve();
-  cout<<stack.printSize();
-  stack.reverse();
-  stack.popReserve(list, 0);
-  cout<<stack.getTop();
-  cout<<stack.printSize();
-  //cout<<"LIST SIZE:"<<list.size;
-  stack.empty(list,0);
-  
-  cout<<list.print();
- //list.add("prefix", "D+A+B");
-  
-  //list.remove("all");
-  //cout<<list.print();
-  //cout<<"LIST SIZE:"<<list.size<<endl;
-  
-  //cout<<stack.top->fix<<stack.top->equation;
-  //cout<<stack.top->bottom->equation;
-  //cout<<stack.print();
-  //cout<<stack.printSize();
-  //cout<<stack.getTop();
-/*
- // stack.add("prefix","0");
-  cout<<stack.getTop();
-  cout<<stack.print();
-  //stack.popReserve(list, 0);
-
-  cout<<stack.getTop();
- 
-  cout<<"LIST SIZE:"<<list.size<<endl;
-  cout<<"STACK SIZE:"<<stack.size<<endl;
-
-  stack.pushReserve(list, "3");
-  cout<<stack.print();
-  cout<<list.print();
-  cout<<stack.getTop();
-  cout<<list.reversePrint();
-  cout<<list.size;
-  list.remove("1");
-  cout<<list.print();
-
-  list.convert("3");
-  cout<<list.print();
-  //cout<<list.head->fix;
-  stack.convertReserve();
-  cout<<stack.getTop();*/
-
 }
+//Command-line test cases
 // ./main "input=input31.txt; output=output31.txt; command=command31.txt"
 //./main "input=input32.txt; output=output32.txt; command=command32.txt"
 //./main "input=input33.txt; output=output33.txt; command=command33.txt"
